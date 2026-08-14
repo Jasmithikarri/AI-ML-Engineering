@@ -1,35 +1,22 @@
-# Supervised Learning — Clean Notes
+# Supervised Learning
 
-## 1. What is Supervised Learning?
+Supervised learning is a type of machine learning where the model learns from labeled data.
 
-Supervised learning is a type of machine learning where the model learns from **labeled data**.
-
-* **Input (X)** → Features
-* **Output (Y)** → Target/Label
+* Input (X) → Features
+* Output (Y) → Target/Label
 * The model learns the relationship between X and Y.
 * It then uses that learning to predict the output for new data.
 
-### Example
-
-| Hours Studied | Result |
-| ------------- | ------ |
-| 2             | Fail   |
-| 4             | Fail   |
-| 7             | Pass   |
-| 9             | Pass   |
-
-The model learns the relationship between study hours and the result.
-
-### Main Types of Supervised Learning
+## Main Types of Supervised Learning
 
 1. Classification
 2. Regression
 
 ---
 
-# 2. Classification
+# 1. Classification
 
-Classification is used when the output is a **category or class**.
+Classification is used when the output is a category or class.
 
 ### Examples
 
@@ -55,9 +42,9 @@ Classification is used when the output is a **category or class**.
 
 ---
 
-# 3. Regression
+# 2. Regression
 
-Regression is used when the output is a **continuous numerical value**.
+Regression is used when the output is a continuous numerical value.
 
 ### Examples
 
@@ -81,13 +68,13 @@ Regression is used when the output is a **continuous numerical value**.
 
 ---
 
-# 4. Linear Regression
+# 3. Linear Regression
 
 Linear Regression is used to predict a numerical value.
 
 It tries to find a relationship between input and output using a straight line.
 
-Basic equation:
+### Equation
 
 **Y = MX + C**
 
@@ -102,25 +89,25 @@ Where:
 
 Predict salary based on years of experience.
 
-The model learns the relationship between:
-
 **Years of Experience → Salary**
 
-### Main goal
+The model learns the relationship between experience and salary.
+
+### Main Goal
 
 Minimize the difference between the actual value and predicted value.
 
 ---
 
-# 5. Logistic Regression
+# 4. Logistic Regression
 
-Despite its name, Logistic Regression is mainly used for **classification**.
+Despite its name, Logistic Regression is mainly used for classification.
 
 It predicts the probability of a class.
 
 ### Example
 
-Email → Spam / Not Spam
+**Email → Spam / Not Spam**
 
 If the model predicts:
 
@@ -135,13 +122,13 @@ The email can be classified as Spam.
 
 ---
 
-# 6. Decision Tree
+# 5. Decision Tree
 
 A Decision Tree makes predictions by asking a series of questions and splitting the data.
 
 ### Example
 
-Income > $50K?
+**Income > $50K?**
 
 * Yes → Age > 30?
 * No → Don't Buy
@@ -159,13 +146,11 @@ It continues splitting until it reaches a final prediction.
 
 A Decision Tree can continue growing deeper and deeper.
 
-As the depth increases:
-
 **More splits → More complexity → Learns training data too closely → Overfitting**
 
 The model may perform very well on training data but poorly on new data.
 
-### Ways to control overfitting
+### Ways to Control Overfitting
 
 * `max_depth`
 * `min_samples_split`
@@ -174,9 +159,9 @@ The model may perform very well on training data but poorly on new data.
 
 ---
 
-# 7. Ensemble Learning
+# 6. Ensemble Learning
 
-Ensemble Learning means **combining multiple models to produce a better prediction**.
+Ensemble Learning means combining multiple models to produce a better prediction.
 
 Instead of depending on one model, we use multiple models and combine their results.
 
@@ -187,7 +172,7 @@ Two important ensemble techniques are:
 
 ---
 
-# 8. Bagging
+# 7. Bagging
 
 Bagging stands for **Bootstrap Aggregating**.
 
@@ -195,7 +180,7 @@ The basic idea is:
 
 > Create multiple random samples from the original dataset, train separate models on those samples, and combine their predictions.
 
-### Bootstrap Sampling
+## Bootstrap Sampling
 
 Sampling is generally done **with replacement**.
 
@@ -227,11 +212,11 @@ Each sample can contain overlapping data.
 
 ---
 
-# 9. Random Forest
+# 8. Random Forest
 
 Random Forest is an **ensemble algorithm based on Bagging and Decision Trees**.
 
-This is important:
+### Important
 
 **Bagging is the technique.**
 
@@ -294,7 +279,7 @@ Final prediction:
 
 ---
 
-# 10. Bagging vs Random Forest
+# 9. Bagging vs Random Forest
 
 These two are related but not exactly the same.
 
@@ -316,7 +301,7 @@ Therefore:
 
 ---
 
-# 11. Boosting
+# 10. Boosting
 
 Boosting is another ensemble technique.
 
@@ -332,16 +317,16 @@ The basic idea:
 
 ### Bagging vs Boosting
 
-| Bagging                                         | Boosting                                                |
-| ----------------------------------------------- | ------------------------------------------------------- |
-| Models are built independently                  | Models are built sequentially                           |
-| Mainly reduces variance                         | Mainly improves bias and overall predictive performance |
-| Models do not depend heavily on previous models | Each model learns from previous model errors            |
-| Random Forest                                   | AdaBoost, Gradient Boosting, XGBoost, etc.              |
+| Bagging                                         | Boosting                                     |
+| ----------------------------------------------- | -------------------------------------------- |
+| Models are built independently                  | Models are built sequentially                |
+| Mainly reduces variance                         | Improves predictive performance              |
+| Models do not depend heavily on previous models | Each model learns from previous model errors |
+| Random Forest                                   | AdaBoost, Gradient Boosting, XGBoost, etc.   |
 
 ---
 
-# 12. AdaBoost
+# 11. AdaBoost
 
 AdaBoost stands for **Adaptive Boosting**.
 
@@ -363,7 +348,7 @@ The basic idea:
 
 ---
 
-# 13. Gradient Boosting
+# 12. Gradient Boosting
 
 Gradient Boosting builds models sequentially and tries to reduce the **prediction error/residual** from previous models.
 
@@ -395,7 +380,7 @@ Then another tree tries to reduce the remaining error.
 
 ---
 
-# 14. XGBoost
+# 13. XGBoost
 
 XGBoost stands for **Extreme Gradient Boosting**.
 
@@ -416,7 +401,7 @@ XGBoost is widely used for **structured/tabular data**.
 
 ---
 
-# 15. LightGBM
+# 14. LightGBM
 
 LightGBM stands for **Light Gradient Boosting Machine**.
 
@@ -442,7 +427,7 @@ Useful when working with:
 
 ---
 
-# 16. CatBoost
+# 15. CatBoost
 
 CatBoost stands for **Categorical Boosting**.
 
@@ -465,7 +450,7 @@ CatBoost provides built-in handling for categorical variables, reducing the need
 
 ---
 
-# 17. K-Nearest Neighbors (KNN)
+# 16. K-Nearest Neighbors (KNN)
 
 KNN stands for **K-Nearest Neighbors**.
 
@@ -513,7 +498,7 @@ Common distance measure:
 
 ---
 
-# 18. Support Vector Machine (SVM)
+# 17. Support Vector Machine (SVM)
 
 SVM stands for **Support Vector Machine**.
 
@@ -543,7 +528,7 @@ They are important because they help determine the position of the boundary.
 * Classification → SVC
 * Regression → SVR
 
-### Common kernels
+### Common Kernels
 
 * Linear
 * Polynomial
@@ -556,7 +541,7 @@ They are important because they help determine the position of the boundary.
 
 ---
 
-# 19. Naive Bayes
+# 18. Naive Bayes
 
 Naive Bayes is a supervised learning algorithm based on **probability** and Bayes' theorem.
 
@@ -570,7 +555,7 @@ Email classification:
 
 The model looks at the features/words in the email and calculates the probability of each class.
 
-### Common applications
+### Common Applications
 
 * Spam detection
 * Text classification
@@ -583,25 +568,23 @@ The model looks at the features/words in the email and calculates the probabilit
 
 ---
 
-# 20. Important Ensemble Learning Structure
+# 19. Important Ensemble Learning Structure
 
-The easiest structure to remember:
+## Ensemble Learning
 
-**Ensemble Learning**
+### Bagging
 
-* **Bagging**
+* Random Forest
 
-  * Random Forest
+### Boosting
 
-* **Boosting**
+* AdaBoost
+* Gradient Boosting
+* XGBoost
+* LightGBM
+* CatBoost
 
-  * AdaBoost
-  * Gradient Boosting
-  * XGBoost
-  * LightGBM
-  * CatBoost
-
-So:
+### Important
 
 **Random Forest ≠ Bagging**
 
@@ -615,7 +598,7 @@ And:
 
 ---
 
-# 21. Quick Comparison of Models
+# 20. Quick Comparison of Models
 
 | Model               | Simple Idea                               | Mainly Used For             |
 | ------------------- | ----------------------------------------- | --------------------------- |
